@@ -1,3 +1,29 @@
-body{
-    background-color: red;
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    height: 100vh;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    font-size: 1rem;
+    color: white;
+    opacity: 0.8;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0.3;
+    }
 }

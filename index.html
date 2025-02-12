@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Falling Snowflakes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-        <h1>Heading </h1>
-        <nav>
-            <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
-            </ul>
-        </nav>
-    
+<script>
+    const body = document.body;
+    const numberOfSnowflakes = 100;
+
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.textContent = '❄';
+
+        // Random position and animation duration
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Between 2-5 seconds
+        snowflake.style.fontSize = Math.random() * 15 + 10 + 'px'; // Between 10-25px
+
+        body.appendChild(snowflake);
+
+        // Remove snowflake after animation
+        snowflake.addEventListener('animationend', () => {
+            snowflake.remove();
+        });
+    }
+
+    setInterval(createSnowflake, 150);
+</script>
+
 </body>
 </html>
